@@ -42,3 +42,4 @@
     book5.getBookInfo();
 
     console.log(book1,book2,book3,book4,book5);
+    
