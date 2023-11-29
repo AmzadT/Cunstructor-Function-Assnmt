@@ -1,5 +1,4 @@
-
-    function BankAccount(accountNumber,name,type,balance)
+function BankAccount(accountNumber,name,type,balance)
 {
     this.accountNumber = accountNumber;
     this.name = name;
@@ -7,12 +6,12 @@
     this.balance = balance;
     this.active = true;
 
-    this.Deposite = function(Amount)
+    BankAccount.prototype.Deposite = function(Amount)
     {
         this.balance += Amount;
     }
 
-    this.Withddraw = function(Amount)
+    BankAccount.prototype.Withddraw = function(Amount)
     {
         if(Amount <= this.balance)
         {
@@ -32,6 +31,14 @@
 
    
 }
+
+BankAccount.prototype.checkBalance = function() {
+  console.log(`Account ${this.accountNumber} balance: $${this.balance}`);
+};
+
+BankAccount.prototype.isActive = function() {
+  return this.active;
+};
 
 
 var acnt1 = new BankAccount(21362172178,"Amzad Hussain","Saving-Account",1000);
@@ -82,7 +89,7 @@ acnt5.checkBalance();
 
 var Accounts = [acnt1,acnt2,acnt3,acnt4,acnt5];
 
-function checkBalance(Accounts)
+function TotalBalance(Accounts)
 {
     var Total = 0;
 
@@ -94,4 +101,4 @@ function checkBalance(Accounts)
     console.log("Total Balance -->",Total);
 }
 
-checkBalance(Accounts);
+TotalBalance(Accounts);
